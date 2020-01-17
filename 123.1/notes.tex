@@ -1,0 +1,139 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcommand{\reals}{\mathbb{R}}
+\let\emptyset\varnothing
+
+\begin{document}
+
+Advanced Calculus I
+\begin{itemize}
+	\item
+		single variable real analysis
+\end{itemize}
+
+Real numbers ($\reals$)
+\begin{itemize}
+	\item
+		$(\reals, +, \cdot)$ is a field.
+	\item
+		$\reals$ with $\geq$ is a partially ordered set.
+\end{itemize}
+
+Absolute value
+\begin{itemize}
+	\item
+		$|x| = \begin{cases}
+			x & x \geq 0 \\
+			-x & x < 0 
+		\end{cases}$
+	\item
+		$|x - a|$ is the distance between $x$ and $a$.
+\end{itemize}
+
+Properties of the absolute value
+\begin{enumerate}
+	\item
+		$|x| \geq 0$
+	\item
+		$|x| = 0 \Leftrightarrow x = 0$
+	\item
+		$|xy| = |x| \cdot |y|$ \\
+		$\left|\dfrac{x}{y}\right| = \dfrac{|x|}{|y|}, y \neq 0$
+	\item
+		$|x + y| \leq |x| + |y|$ \\
+		$|x| - |y| \leq |x - y|$
+	\item
+		If $a > 0$ then \\
+		$|x| < a \Leftrightarrow -a < x < a$ \\
+		$|x| > a \Leftrightarrow x > a \text{ or } x < -a$
+\end{enumerate}
+
+Other consequences
+\begin{enumerate}
+	\item
+		$|-x| = |x|$
+	\item
+		If $a > 0$ then \\
+		$|x - b| < a \Leftrightarrow b - a < x < b + a$
+	\item
+		$|x - y| = 0 \Leftrightarrow x = y$
+	\item
+		$\bigl||x| - |y|\bigr| \leq |x - y|$
+\end{enumerate}
+
+Supremum and Infimum \\
+Definition. Let $S \subseteq \reals$ and $u, v \in \reals$.
+\begin{enumerate}
+	\item
+		$u$ is an upper bound of $S$ if for all $s \in S$, $s \leq u$
+	\item
+		$v$ is a lower bound of $S$ if for all $s \in S$, $s \geq v$
+\end{enumerate}
+Definition.
+\begin{enumerate}
+	\item
+		If $S$ has an upper [lower] bound, then $S$ is said to be bounded above [below].
+	\item
+		If $S$ is bounded above and below, then $S$ is said to be bounded.
+\end{enumerate}
+Remark.
+\begin{enumerate}
+	\item
+		$S$ is bounded above if \\
+		$(\exists u \in \reals)(\forall s \in S)(s \leq u)$ \\
+		$S$ is bounded below if \\
+		$(\exists v \in \reals)(\forall s \in S)(s \geq v)$
+	\item
+		$S$ is bounded \\
+		$\Leftrightarrow (\exists u, v \in \reals)(\forall s \in S)(v \leq s \leq u)$ \\
+		$\Leftrightarrow (\exists M > 0)(\forall s \in S)(|s| \leq M)$
+\end{enumerate}
+Definition. Let $S \subseteq \reals$ and $u, v \in \reals$.
+\begin{enumerate}
+	\item
+		$u$ is the supremum (or least upper bound) of $S$ if:
+		\begin{enumerate}
+			\item
+				$u$ is an upper bound of $S$
+			\item
+				and for all upper bounds $d$ of $S$, $u \leq d$.
+		\end{enumerate}
+	\item
+		$v$ is the infimum (or greatest lower bound) of $S$ if:
+		\begin{enumerate}
+			\item
+				$v$ is a lower bound of $S$
+			\item
+				and for all lower bounds $b$ of $S$, $v \geq b$.
+		\end{enumerate}
+\end{enumerate}
+Remark.
+\begin{enumerate}
+	\item
+		Notation: \\
+		$\sup S = u$ \\
+		$\inf S = v$
+	\item
+		The supremum and infimum of $S$ are not necessarily in $S$.
+	\item
+		Since $\emptyset$ is bounded above and below by any $a \in \reals$, $\emptyset$ has neither a supremum nor an infimum.
+	\item
+		$S$ is not bounded above implies that $S$ has no supremum. \\
+		$S$ is not bounded below implies that $S$ has no infimum.
+\end{enumerate}
+Theorem. Let $S \subseteq \reals$. If a supremum [infimum] exists, then it is unique. \\
+Proof. Suppose that $u$ and $v$ are suprema of $S$. For the sake of contradiction, assume that $u \neq v$. Without loss of generality, assume that $u < v$. By definition of supremum, $u$ is an upper bound of $S$. Also by definition of supremum, $v \leq d$ for any upper bound $d$ of $S$. Taking $d = u$, we get $v \leq u$. Then $u < v \leq u$, which is absurd. Thus, $u = v$. \\
+Theorem. Let $u$ be an upper bound of a non-empty set $S \subseteq \reals$. Then the following are equivalent:
+\begin{enumerate}
+	\item
+		$\sup S = u$
+	\item
+		$(\forall x \in \reals)(x < u \Rightarrow (\exists s \in S)(x < s))$
+	\item
+		$(\forall \varepsilon > 0)(\exists s \in S)(u - \varepsilon < s)$
+\end{enumerate}
+
+\end{document}
