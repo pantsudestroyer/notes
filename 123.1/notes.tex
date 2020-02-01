@@ -1,10 +1,26 @@
-\documentclass{article}
+\documentclass[twocolumn]{article}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{enumitem}
 
-\newcommand{\reals}{\mathbb{R}}
+\setlist{nosep}
+
+\newcommand{\qed}{$\blacksquare$}
+\newcommand{\br}{\vspace{\baselineskip}}
+\newcommand{\COMPLEMENT}{^\mathsf{c}}
+\let\complement\COMPLEMENT
 \let\emptyset\varnothing
+\let\eps\varepsilon
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\integers}{\mathbb{Z}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\irrationals}{\rationals\complement}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\complex}{\mathbb{C}}
+
+\setlength{\parindent}{0pt}
 
 \begin{document}
 
@@ -19,7 +35,7 @@ Real numbers ($\reals$)
 	\item
 		$(\reals, +, \cdot)$ is a field.
 	\item
-		$\reals$ with $\geq$ is a partially ordered set.
+		$(\reals, \geq)$ is a partially ordered set.
 \end{itemize}
 
 Absolute value
@@ -124,9 +140,14 @@ Remark.
 		$S$ is not bounded above implies that $S$ has no supremum. \\
 		$S$ is not bounded below implies that $S$ has no infimum.
 \end{enumerate}
-Theorem. Let $S \subseteq \reals$. If a supremum [infimum] exists, then it is unique. \\
-Proof. Suppose that $u$ and $v$ are suprema of $S$. For the sake of contradiction, assume that $u \neq v$. Without loss of generality, assume that $u < v$. By definition of supremum, $u$ is an upper bound of $S$. Also by definition of supremum, $v \leq d$ for any upper bound $d$ of $S$. Taking $d = u$, we get $v \leq u$. Then $u < v \leq u$, which is absurd. Thus, $u = v$. \\
-Theorem. Let $u$ be an upper bound of a non-empty set $S \subseteq \reals$. Then the following are equivalent:
+
+Theorem. \\
+Let $S \subseteq \reals$. If a supremum [infimum] exists, then it is unique. \\
+Proof. \\
+Suppose that $u$ and $v$ are suprema of $S$. For the sake of contradiction, assume that $u \neq v$. Without loss of generality, assume that $u < v$. By definition of supremum, $u$ is an upper bound of $S$. Also by definition of supremum, $v \leq d$ for any upper bound $d$ of $S$. Taking $d = u$, we get $v \leq u$. Then $u < v \leq u$, which is absurd. Thus, $u = v$. \qed \\
+
+Theorem. \\
+Let $u$ be an upper bound of a non-empty set $S \subseteq \reals$. Then the following are equivalent:
 \begin{enumerate}
 	\item
 		$\sup S = u$
@@ -135,5 +156,220 @@ Theorem. Let $u$ be an upper bound of a non-empty set $S \subseteq \reals$. Then
 	\item
 		$(\forall \varepsilon > 0)(\exists s \in S)(u - \varepsilon < s)$
 \end{enumerate}
+Proof. \\
+$\left[(1) \Rightarrow (2)\right]$ Suppose that $\sup S = u$. Let $x < u$. Since $u$ is the least upper bound then any number less than $u$ is not an upper bound. In particular, $x$ is not an upper bound. Thus, there exists $s \in S$ such that $x < s$. \\
+$\left[(2) \Rightarrow (3)\right]$ Suppose that $(\forall x \in \reals)(x < u \Rightarrow (\exists s \in S)(x < s))$. Let $\varepsilon > 0$. Take $x = u - \varepsilon < u$. Thus, there exists $s \in S$ such that $x < s$ so that $u - \varepsilon < s$. \\
+$\left[(3) \Rightarrow (2)\right]$ Suppose that $(\forall \varepsilon > 0)(\exists s \in S)(u - \varepsilon < s)$. For the sake of contradiction, suppose that $u$ is not the supremum of $S$. Thus, there exists $w$ such that $w$ is an upper bound of $S$ and $w < u$. Take $\varepsilon = u - w > 0$. Then, there exists $s$ such that $u - \varepsilon < s$ so that $w < s$. Thus, $w$ is not an upper bound, which is a contradiction. \qed \\
+
+Theorem. \\
+Let $v$ be a lower bound of a non-empty set $S \subseteq \reals$. Then the following are equivalent:
+\begin{enumerate}
+	\item
+		$\inf S = v$
+	\item
+		$(\forall x \in \reals)(x > v \Rightarrow (\exists s \in S)(x > s)$
+	\item
+		$(\forall \varepsilon > 0)(\exists s \in S)(v + \varepsilon > s)$
+\end{enumerate}
+Proof. \\
+Left as an exercise. \qed \\
+
+Definition. \\
+Let $a \in \reals$ and $S \subseteq \reals$.
+\begin{enumerate}
+	\item
+		$a + S = \{a + s \mid s \in S\}$
+	\item
+		$-S = \{-s \mid s \in S\}$
+\end{enumerate} \br
+
+Theorem. \\
+Let $S \subseteq \reals$ and $a \in \reals$.
+\begin{enumerate}
+	\item
+		If $S$ is bounded above then $\sup (a + S) = a + \sup S$.
+	\item
+		If $S$ is bounded below then $\inf (a + S) = a + \inf S$.
+	\item
+		If $S$ is counded then
+		\begin{enumerate}
+			\item
+				$\inf (-S) = -\sup S$
+			\item
+				$\sup (-S) = -\inf S$
+		\end{enumerate}
+\end{enumerate}
+Proof. \\
+Let $S \subseteq \reals$ and $a \in \reals$.
+\begin{enumerate}
+	\item
+		Let $u = \sup S$ and $v = \sup (a + S)$. Since $u = \sup S$, we know that $u$ is an upper bound of $S$. Hence, for all $s \in S$, $s \leq u$. Thus, for all $s \in S$, $a + s \leq u + a$. Then, $u + a$ is an upper bound of $S$. Therefore, since $v$ is the least upper bound of $S$, $v \leq u + a$. Since $v = \sup (a + S)$, we know that $v$ is an upper bound of $a + S$. Hence, for all $s \in S$, $a + s \leq v$ so that $s \leq v - a$ for all $s \in S$. Thus, $v$ is an upper bound of $S$. Since $u$ is the least upper bound of $S$, we know that $u \leq v - a$ so that $u + a \leq v$.
+	\item
+		Exercise.
+	\item
+		Exercise. \qed
+\end{enumerate} \br
+
+The Completeness Axiom of $\reals$
+\begin{itemize}
+	\item
+		every non-empty subset of $\reals$ that has an upper [lower] bound has a supremum [infimum].
+\end{itemize}
+
+Theorem. Archimedean Property.
+\begin{enumerate}
+	\item
+		For every $x \in \reals$, there exists $n \in \naturals$ such that $x < n$.
+	\item
+		For every $y > 0$, there exists $n \in \naturals$ such that $\frac{1}{n} < y$.
+\end{enumerate}
+Proof.
+\begin{enumerate}
+	\item
+		Suppose, for the sake of contradiction, that there exists $x \in \reals$ such that for every $n \in \naturals$, $x \geq n$. Thus, $x$ is an upper bound of $\naturals$. Also, $\naturals$ is clearly non-empty. Thus, by the completeness axiom of $\reals$, there exists $u \in \reals$ such that $u = \sup \naturals$. Since $1 > 0$, by a previous theorem, we know that there exists $n \in \naturals$ such that $u - 1 < n$ so that $u < n + 1 \in \naturals$. Thus, $u$ is not an upper bound of $\naturals$ so that $u$ is not a supremum of $\naturals$, which is a contradiction.
+	\item
+		Let $y > 0$. Take $x = 1 / y$, then there exists $n \in \naturals$ such that $\frac{1}{y} = x < n$ so that $\frac{1}{n} < y$. \qed
+\end{enumerate} \br
+
+Corollary. \\
+For any $y > 0$, there exists $n \in \naturals$ such that $n - 1 \leq y < n$. \\
+Proof. \\
+Let $y > 0$. Consider the set $S = \{n \in \naturals \mid y < n \}$. By the Archimedean Property, $S \neq \emptyset$. By the well-ordering principle, there exists $n \in S$ such that $n = \min S$ so that for all $m \in S$, $m \geq n$. Since $n \in S$, we know that $y < n$. From the fact that $n$ is the least element of $S$, we get that $m < n$ implies that $m \not\in S$ for any $m \in \reals$. In particular, $n - 1 < n$ so that $n - 1 \not\in S$. Thus, $n - 1 \leq y$. \qed \\
+
+Theorem. Density Theorem. \\
+For every $x, y \in \reals$ such that $x < y$, there exists $r \in \rationals$ such that $x < r < y$. \\
+Proof. \\
+Since $y - x > 0$, then by the Archimedean Property, there exists $n \in \naturals$ such that $\frac{1}{n} < y - x$. Thus, $1 < |ny - nx|$. This means that the distance of $ny$ from $nx$ is greater than 1 so that there exists $m \in \integers$ such that $nx < m < ny$ and thus, $x < \frac{m}{n} < y$. Taking $r = \frac{m}{n}$, we are done. \qed \\
+
+Corollary. \\
+For every $x, y \in \reals$ such that $x < y$, there exists $r' \in \irrationals$ such that $x < r' < y$. \\
+Proof. \\
+Exercise. \qed \\
+
+Nested Interval Property. \\
+
+Definition. \\
+A set $S \subseteq \reals$ that has at least two elements is an interval if for every $s, r \in S$ such that $r < s$, we have that $\{ x \in \reals \mid r < x < s \} \subseteq S$. \\
+
+Definition. \\
+A collection $(I_n)_{n = 1}^\infty$ of intervals in $\reals$ is said to be nested if $I_{j + 1} \subset I_j$ for all $j \in \naturals$. \\
+
+Theorem. Nested Interval Property. \\
+Let the collection $([a_n, b_n])_{n = 1}^\infty$ be nested. Then the following are true:
+\begin{enumerate}
+	\item
+		$\bigcap_{n = 1}^\infty [a_n, b_n] \neq \emptyset$
+	\item
+		$\inf \{ b_n - a_n \mid n \in \naturals \} = 0$ implies $\exists! x \in \reals$ such that $\bigcap_{n = 1}^\infty [a_n, b_n] = \{ x \}$
+\end{enumerate}
+Proof. \\
+Observe that since $([a_n, b_n])$ is nested, then for all $i, j \in \naturals$ such that $i \leq j$, we have that $a_i \leq a_j$ and $b_i \geq b_j$. And since each $[a_n, b_n]$ is an interval, we know that $a_n < b_n$ for all $n \in \naturals$. Hence, for any $n \in \naturals$, we have that $1 \leq n$ so that $b_n \leq b_1$ and thus, $a_n < b_1$.
+\begin{enumerate}
+	\item
+		Let $A = \{ a_n \mid n \in \naturals \}$. Since $A$ is non-empty and bounded above by $b_1$, then by the completeness axiom of $\reals$, there exists $x \in \reals$ such that $\sup A = x$ so that $x$ is an upper bound of $A$. Thus, $a_n \leq x$ for any $n \in \naturals$. Let $m, n \in \reals$. If $m \leq n$ then $a_m \leq a_n < b_n$. If $m > n$ then $a_m < b_m \leq b_n$. Thus, $b_n$ is an upper bound of $A$. Since $x$ is the least upper bound of $A$, we have that $x \leq b_n$.
+	\item
+		Let $B = \{ b_n \mid n \in \naturals \}$. Similar arguments show that if $y = \inf B$ then for any $m, n \in \naturals$, $a_m \leq y \leq b_n$. Assume $\inf \{ b_n - a_n \mid n \in \naturals \} = 0$. Note that if $z \in \bigcap_{n = 1}^\infty [a_n, b_n]$, then $x \leq z \leq y$. Otherwise, if for example, $z > y$, then there exists $n \in \naturals$ such that $b_n < z$ so that $z \not\in [a_n, b_n]$. This implies that $\bigcap_{n = 1}^\infty [a_n, b_n] \subseteq [x, y]$. Note that for all $n \in \naturals$, $b_n - a_n \geq y - x$ since $b_n \geq y$ and $a_n \leq x$. Thus, $y - x$ is a lower bound of $\{ b_n - a_n \mid n \in \naturals \}$. Since $0 = \inf \{ b_n - a_n \mid n \in \naturals \}$, we have that $y - x \leq 0$ so that $y \leq x$. Since $x \leq y$, then $x = y$. \qed
+\end{enumerate} \br
+
+Topology.
+\begin{itemize}
+	\item
+		study of properties of a space that is preserved under continuous deformations
+\end{itemize} \br
+
+Definition. \\
+Let $\eps > 0$ and $x \in \reals$. The $\eps$-neighborhood of $x$, denoted by $N_\eps(x)$, is the set $N_\eps(x) = \{ y \in \reals \mid |x - y| < \eps \}$, also called the ball about $x$ of radius $\eps$. \\
+
+Definition.
+\begin{enumerate}
+	\item
+		A set $G \subseteq \reals$ is open if for all $x \in G$, there exists $\eps > 0$ such that $N_\eps(x) \subseteq G$.
+	\item
+		A set $F \subseteq \reals$ is closed if $F\complement$ is open.
+\end{enumerate} \br
+
+Theorem.
+\begin{enumerate}
+	\item
+		The arbitrary union of open sets and finite intersections of open sets are open.
+	\item
+		The arbitrary intersection of closed sets and finite unions of closed sets are closed.
+\end{enumerate}
+Proof.
+\begin{enumerate}
+	\item
+		Let $G_\alpha$ be open for all $\alpha \in \reals$. Define $G = \bigcup_{\alpha \in \reals} G_\alpha$. Let $x \in G$. Then, there exists $\alpha \in \reals$ such that $x \in G_\alpha$. Since $G_\alpha$ is open, we know that there exists $\eps > 0$ such that $N_\eps(x) \subseteq G_\alpha$. Thus, $N_\eps(x) \subseteq G_\alpha \subseteq G$. \\
+		Let $G_1, G_2, \ldots, G_n$ be open sets.  Define $G = \bigcap_{i = 1}^n G_i$. Let $x \in G$. Then, for $i = 1, 2, \ldots, n$, $x \in G_i$. Since $G_i$ is open, there exists $\eps_i > 0$ such that $N_{\eps_i}(x) \subseteq G_i$. Take $\eps = \min \{ \eps_1, \eps_2, \ldots, \eps_n \}$. Then, for $i = 1, 2, \ldots, n$, we have that $N_\eps(x) \subseteq N_{\eps_i}(x)$ so that $N_\eps(x) \subseteq G_i$. Thus, $N_\eps(x) \subseteq \bigcap_{i = 1}^n G_i = G$.
+	\item
+		Exercise. \qed
+\end{enumerate} \br
+
+Definition. \\
+Let $x \in \reals$ and $A \subseteq \reals$. We say that $x$ is a cluster point of $A$ if for any $\eps > 0$, we have that $(A \setminus \{ x \}) \cap N_\eps(x) \neq \emptyset$. We denote by $A'$ the set of all cluster points of $A$. \\
+
+Example. Proof is an exercise. \\
+\begin{tabular}{l | l}
+$A$ & $A'$ \\ \hline
+$[a, b]$, $(a, b)$ & $[a, b]$ \\
+finite & $\emptyset$ \\
+$\naturals$ & $\emptyset$ \\
+$\rationals$, $\irrationals$ & $\reals$
+\end{tabular} \br
+
+Trivia. \\
+$G$ is dense in $F$ if $G' = F$. \\
+
+Proof of $\rationals' = \reals$. \\
+Let $x \in \reals$. Let $\eps > 0$. Since $x - \eps < x$, we know by the density theorem that there exists $y \in \rationals$ such that $x - \eps < y < x$ so that $y \neq x$. Thus, $x - y < \eps$ so that $|x - y| < \eps$. \qed \\
+
+Theorem. \\
+A set $F \subseteq \reals$ is closed if and only if it contains all of its cluster points. \\
+Proof. \\
+Let $F \subseteq \reals$ be closed. Let $x \in F'$. Suppose $x \not\in F$. Then, $x \in F\complement$. Note that $F\complement$ is open. Hence, there exists $\eps > 0$ such that $N_\eps(x) \subseteq F\complement$. Thus, no element of $F$ is in $N_\eps(x)$ so that $x$ is not a cluster point, which is a contradiction. \\
+Let $F$ contain all of its cluster points. Let $x \in F\complement$. Then, $x$ is not a cluster point of $F$. Thus, there exists $\eps > 0$ such that $(F \setminus \{ x \}) \cap N_\eps(x) = \emptyset$. Since $x \not\in F$, we get that $F \setminus \{ x \} = F$ so that $F \cap N_\eps(x) = \emptyset$. Therefore, $N_\eps(x) \subseteq F\complement$. \qed \\
+
+Definition. \\
+The closure of $A$, denoted by $\bar{A}$, is the smallest closed set containing $A$. We state the following facts without proof:
+\begin{enumerate}
+	\item
+		$\bar{A} = A \cup A'$
+	\item
+		$A$ is closed if and only if $\bar{A} = A$
+\end{enumerate} \br
+
+Compact Sets. \\
+
+Definition. \\
+Let $A \subseteq \reals$. An open cover of $A$ is a collection $\mathcal{G} = \{ G_\alpha \}_{\alpha \in \reals}$ of open setssuch that $A \subseteq \bigcup_{\alpha \in \reals} G_\alpha$. \\
+A subcover of $\mathcal{G}$ is a subcollection $\{ G'_\alpha \}_{\alpha \in \reals}$ such that $A \subseteq \bigcup_{\alpha \in \reals} G'_\alpha$. \\
+
+Definition. \\
+A set $K \subseteq \reals$ is compact if every open cover of $K$ has a finite subcover. \\
+
+Lemma. \\
+Let $n \in \naturals$. Then $n \leq 2^n$. \\
+Proof. \\
+Let $n \in \naturals$. If $n = 1$, then $n = 1 < 2 = 2^1 = 2^n$. Suppose that $n \leq 2^n$. Then $n + 1 \leq n + n = 2n \leq 2(2^n) = 2^{n + 1}$. Thus, by the principle of mathematical induction, $n \leq 2^n$ for any $n \in \naturals$. \\
+
+Theorem. \\
+$[a, b]$ is compact. \\
+Proof. \\
+Suppose, for the sake of contradiction, that $\mathcal{G} = \{ G_\alpha \}$ is an open cover of $[a, b]$ that does not have a finite subcover. \\
+Consider the intervals $[a, \frac{a + b}{2}]$ and $[\frac{a + b}{2}, b]$. Since $[a, b]$ does not have a finite subcover, then one of the two is also not finitely covered, say $I_1$. \\
+Bisecting $I_1$, we again can conclude that one of these two subintervals will not be finitely covered, say $I_2$. \\
+Continuing this, we obtain a sequence of intervals $\{ I_n \}_{n = 1}^\infty$ such that
+$$I_1 \supseteq I_2 \supseteq I_3 \supseteq \cdots \text{.}$$
+Clearly, the sequence is a nested set of closed and bounded intervals. \\
+Suppose that $I_n = [a_n, b_n]$. If $n = 1$, then $b_1 - a_1 = \frac{b - a}{2}$. If $b_n - a_n = \frac{b - a}{2^n}$ then $b_{n + 1} - a_{n + 1} = \frac{1}{2}(b_n - a_n)$. So by the principle of mathematical induction, $b_n - a_n = \frac{b - a}{2^n}$ for any $n \in \naturals$. \\
+Consider the set $A = \{ b_n - a_n \mid n \in \naturals \} = \{ \frac{b - a}{2^n} \mid n \in \naturals \}$. Note that $\frac{b - a}{2^n} > 0$ for any $n \in \naturals$ so that $0$ is a lower bound of $A$. Let $\eps > 0$. By the archimedean property, there exists $r \in \naturals$ such that $\frac{1}{r} < \eps$. Also by the archimedean property, there exists $s \in \naturals$ such that $r(b - a) < s$ so that $\frac{b - a}{s} < \frac{1}{r}$. Taking $n = s$, we get $\frac{b - a}{2^n} \leq \frac{b - a}{s} < \frac{1}{r} < \eps$. Therefore, $\inf A = 0$. \\
+By the nested interval property, $\exists! x \in \reals$ such that $\bigcap_{n = 1}^\infty I_n = \{ x \}$. Since $x \in [a, b]$, there exists $\alpha$ such that $x \in G_\alpha$. Since $G_\alpha$ is open, there exists $\eps$ such that $N_\eps(x) \subseteq G$. Choose $N$ large enough such that $\frac{b - a}{2^N} < \eps$. Then, $I_N \subseteq N_\eps(x)$ so that $I_N$ is finitely covered, which is a contradiction. \qed \\
+
+Theorem. Heine Borel Theorem. \\
+A set $K \subseteq \reals$ is compact if and only if it is closed and bounded. \\
+Proof. \\
+Suppose $K$ is compact. \\
+Consider $\mathcal{G} = \{ G_n \}$ where $G_n = (-n, n)$. Clearly, $\mathcal{G}$ covers $\reals$. In particular, it covers $K$. Since $K$ is compact, there exists a finite subcover $\mathcal{G'} = \{ G_{m_1}, G_{m_2}, \cdots, G_{m_n} \}$. Take $M = \max \{ m_1, m_2, \cdots, m_n \}$. Thus, $\bigcup_{i = 1}^n G_{m_i} = (-M, M) \supseteq K$, so that $K$ is bounded. \\
+Let $x \in K\complement$. Take $\mathcal{G} = \{ G_n \}$, where $G_n = \{ y \mid |x - y| > \frac{1}{n} \}$. Then, $\bigcup_{n = 1}^\infty G_n = \reals \setminus \{ x \} \supseteq K$. Since $K$ is compact, there exists a finite subcover $\mathcal{G'} = \{ G_{m_1}, G_{m_2}, \cdots, G_{m_n} \}$. Take $M = max \{ m_1, m_2, \cdots, m_n \}$. Thus, $\bigcup_{i = 1}^n G_{m_i} = G_M \supseteq K$. Take $\eps = \frac{1}{M}$ so that $N_\eps(x) \subseteq G_M\complement$ and thus, $N_\eps(x) \subseteq K\complement$. \\
+Suppose $K$ is closed and bounded. Let $\mathcal{G} = \{ G_\alpha \}$ be an open cover for $K$. Since $K$ is bounded, then there exists $M > 0$ such that $K \subseteq [-M, M]$. Since $K$ is closed, $K\complement$ is open. Note that $\bigcup G_\alpha \supseteq K$ so that $\bigcup G_\alpha \cup K\complement \supseteq K \cup K\complement = \reals$. Thus, $\mathcal{G} \cup \{ K\complement \}$ is an open cover for $\reals$ and in particular, $[-M, M]$. Since $[-M, M]$ is compact, there exists a finite subcover of $\mathcal{G} \cup \{ K\complement \}$ so that there exists $\mathcal{G'} = \{ G_{m_1}, G_{m_2}, \cdots, G_{m_n} \}$ such that $\bigcup_{i = 1}^n G_{m_i} \cup K\complement \supseteq [-M, M] \supseteq K$. Thus, $\bigcup_{i = 1}^n G_{m_i} \supseteq K$. \qed \\
 
 \end{document}

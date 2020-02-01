@@ -1,0 +1,106 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\integers}{\mathbb{Z}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\complex}{\mathbb{C}}
+
+\begin{document}
+
+\begin{enumerate}
+	\item
+		Show that 1001 is divisible by 7, by 11, and by 13.
+	\item
+		Find the quotient and remainder in the division algorithm when the following numbers are divided by 17.
+		\begin{enumerate}
+			\item
+				100
+			\item
+				289
+			\item
+				-100
+		\end{enumerate}
+	\item
+		Prove the following:
+		\begin{enumerate}
+			\item
+				If $a|b$ and $b|a$, then $a = \pm b$.
+			\item
+				If $a|b$ and $c|d$, then $ac | bd$.
+			\item
+				If $a|b$, then $a^k | b^k$ for all positive integers $k$.
+		\end{enumerate}
+	\item
+		Show that if $a$ is an integer, then 3 divides $a^3 - a$.
+	\item
+		Show that the fourth power of any integer is either of the form $5k$ or $5k + 1$.
+	\item
+		Verify that $2 | a(a + 1)$ and $3 | a(a + 1)(a + 2)$ for any integer $a$.
+	\item
+		Show that if $a$ is odd, then $32 | (a^2 + 3)(a^2 + 7)$.
+	\item
+		Prove that if $a$ is an integer not divisible by 2 or 3, then $24 | (a^2 + 23)$.
+	\item
+		Prove that the sum of the squares of two odd integers cannot be a perfect square.
+\end{enumerate}
+
+\pagebreak
+
+Solutions.
+\begin{enumerate}
+	\item
+		Note that $1001 = 7 \cdot 143 = 11 \cdot 91 = 13 \cdot 77$ where $143, 91, 77 \in \integers$ so that 1001 is divisible by 7, by 11, and by 13.
+	\item
+		\begin{enumerate}
+			\item
+				$100 = 17 \cdot 5 + 15$ so that the quotient and remainder when 100 is divided by 17 are 5 and 15, respectively.
+			\item
+				$289 = 17 \cdot 17 + 0$ so that the quotient and remainder when 289 is divided by 17 are 17 and 0, respectively.
+			\item
+				$-100 = 17 \cdot -6 + 2$ so that the quotient and remainder when $-100$ is divided by 17 are $-6$ and 2, respectively.
+		\end{enumerate}
+	\item
+		\begin{enumerate}
+			\item
+				Suppose that $a|b$ and $b|a$. Then, by definition, there exists $m, n \in \integers$ such that $b = am$ and $a = bn$. If $b = 0$, then $a = 0n = 0$. Note that $0 = \pm 0$ so that $a = \pm b$. Otherwise, assume that $b \neq 0$. Then, $b = (bn)m = b(nm)$ so that $1 = nm$. Since $m \in \integers$, then $n | 1$ so that $n = \pm 1$. Thus, $a = b \cdot \pm 1 = \pm b$.
+			\item
+				Suppose that $a|b$ and $c|d$. Then, by definition, there exists $m, n \in \integers$ such that $b = am$ and $d = cn$. Hence, $bd = (am)(cn) = ac(mn)$ where $mn \in \integers$. Thus, by definition, $ac | bd$.
+			\item
+				Suppose that $a|b$. Then, by definition, there exists $m \in \integers$ such that $b = am$. Hence, $b^1 = a^1m$ so that $a^1 | b^1$. Let $k$ be a positive integer. Suppose that $a^k | b^k$. Then, by definition, there exists $n \in \integers$ such that $b^k = a^kn$. Thus, $(b^k)(b) = (a^kn)(am)$. Hence, $b^{k + 1} = a^{k + 1}(mn)$ where $mn \in \integers$. Thus, by definition, $a^{k + 1} | b^{k + 1}$. By the principle of mathematical induction, $a^k | b^k$ for all positive integers $k$.
+		\end{enumerate}
+	\item
+		By the division algorithm, any integer $a$ can be written in one of the following forms:
+		$$a = 3q\text{,}$$
+		$$a = 3q + 1\text{, and}$$
+		$$a = 3q + 2$$
+		where $q \in \integers$. If $a = 3q$ then $a^3 - a = 27q^3 - 3q = 3(9q^3 - q)$, where $9q^3 - q \in \integers$ so that $3 | a^3 - a$. If $a = 3q + 1$ then $a^3 - a = 27q^3 + 27q^2 + 9q + 1 - (3q + 1) = 27q^3 + 27q^2 + 6q = 3(9q^3 + 9q^2 + 2q)$, where $9q^3 + 9q^2 + 2 \in \integers$ so that $3 | a^3 - a$. If $a = 3q + 2$ then $a^3 - a = 27q^3 + 54q^2 + 36q + 8 - (3q + 2) = 27q^3 + 54q^2 + 33q + 6 = 3(9q^3 + 18q^2 + 11q + 2)$, where $9q^3 + 18q^2 + 11q + 2 \in \integers$ so that $3 | a^3 - a$. Thus, $3 | a^3 - a$ for any integer $a$.
+	\item
+		Let $n$ be an integer. By the division algorithm, $n$ can be written in one of the following forms:
+		$$n = 5q\text{,}$$
+		$$n = 5q + 1\text{,}$$
+		$$n = 5q + 2\text{,}$$
+		$$n = 5q + 3\text{, and}$$
+		$$n = 5q + 4$$
+		where $q \in \integers$. If $n = 5q$ then $n^4 = 625q^4 = 5(125q^4)$. Taking $k = 125q^4 \in \integers$, we can write $n^4$ as $5k$. If $n = 5q + 1$ then $n^4 = 625q^4 + 500q^3 + 150q^2 + 20q + 1 = 5(125q^4 + 100q^3 + 30q^2 + 4q) + 1$. Taking $k = 125q^4 + 100q^3 + 30q^2 + 4q \in \integers$, we can write $n^4$ as $5k + 1$. If $n = 5q + 2$ then $n^4 = 625q^4 + 1000q^3 + 600q^2 + 160q + 16 = 5(125q^4 + 200q^3 + 120q^2 + 32q + 3) + 1$. Taking $k = 125q^4 + 200q^3 + 120q^2 + 32q + 3 \in \integers$, we can write $n^4$ as $5k + 1$. If $n = 5q + 3$ then $n^4 = 625q^4 + 1500q^3 + 1350q^2 + 540q + 81) = 5(125q^4 + 300q^3 + 270q^2 + 108q + 16) + 1$. Taking $k = 125q^4 + 300q^3 + 270q^2 + 108q + 16 \in \integers$, we can write $n^4$ as $5k + 1$. If $n = 5q + 4$ then $n^4 = 625q^4 + 2000q^3 + 2400q^2 + 1280q + 256 = 5(125q^4 + 400q^3 + 480q^2 + 256q + 51) + 1$. Taking $k = 125q^4 + 400q^3 + 480q^2 + 256q + 51) \in \integers$, we can write $n^4$ as $5k + 1$. Thus, the fourth power of any integer is either of the form $5k$ or $5k + 1$.
+	\item
+		Let $a$ be an integer. Then $a(a + 1) \in \integers$ so that $3 | 3a(a + 1)$. We know that $3 | a^3 - a = a(a + 1)(a - 1)$. Thus, $3 | a(a + 1)(a - 1) + 3a(a + 1) = a(a + 1)(a - 1 + 3) = a(a + 1)(a + 2)$. By the division algorithm, either $a = 2q$ or $a = 2q + 1$ for some $q \in \integers$. If $a = 2q$ then $a(a + 1) = 2q(2q + 1) = 2(q(2q + 1))$, where $q(2q + 1) \in \integers$ so that $2 | a(a + 1)$. If $a = 2q + 1$ then $a(a + 1) = (2q + 1)(2q + 1 + 1) = 2((q + 1)(2q + 1))$, where $(q + 1)(2q + 1) \in \integers$ so that $2 | a(a + 1)$.
+	\item
+		Suppose that $a$ is odd. Thus, $a = 2q + 1$ for some $q \in \integers$. Hence, $a^2 + 3 = 4q^2 + 4q + 1 + 3 = 4(q^2 + q + 1)$ and $a^2 + 7 = 4q^2 + 4q + 1 + 7 = 4(q^2 + q + 2)$. We know that $2 | q(q + 1)$ and $2 | 2$ so that $2 | q(q + 1) + 2 = q^2 + q + 2$. Thus, by definition, $q^2 + q + 2 = 2k$ for some $k \in \integers$. Hence, $(a^2 + 3)(a^2 + 7) = (4(q^2 + q + 1))(4(2k)) = 32k(q^2 + q + 1) = 32(k(q^2 + q + 1))$, where $k(q^2 + q + 1) \in \integers$ so that $32 | (a^2 + 3)(a^2 + 7)$.
+	\item
+		Suppose that $a$ is an integer not divisible by 2 or 3. By the division algorithm, any integer $a$ can be written in one of the following forms:
+		$$a = 6q\text{,}$$
+		$$a = 6q + 1\text{,}$$
+		$$a = 6q + 2\text{,}$$
+		$$a = 6q + 3\text{,}$$
+		$$a = 6q + 4\text{, and}$$
+		$$a = 6q + 5$$
+		where $q \in \integers$. Since $a$ is not divisible by 3, we get that $a \neq 6q = 3(2q)$ and $a \neq 6q + 3 = 3(2q + 1)$. Since $a$ is not divisible by 2, we additionally get that $a \neq 6q + 2 = 2(3q + 1)$ and $a \neq 6q + 4 = 2(3q + 2)$. Thus, either $a = 6q + 1$ or $a = 6q + 5$. If $a = 6q + 1$ then $a^2 + 23 = 36q^2 + 12q + 1 + 23 = 24(q^2 + 1) + 12(q^2 + q)$. We know that $2 | q^2 + q$ so that for some $k \in \integers$, $q^2 + q = 2k$. Thus, $a^2 + 23 = 24(q^2 + 1) + 12(2k) = 24(q^2 + 1 + k)$, where $q^2 + 1 + k \in \integers$ so that $24 | a^2 + 23$. If $a = 6q + 5$ then $a^2 + 23 = 36q^2 + 60q + 25 + 23 = 24(q^2 + 2q + 2) + 12(q^2 + q) = 24(q^2 + 2q + 2) + 12(2k) = 24(q^2 + 2q + 2 + k)$, where $q^2 + 2q + 2 + k \in \integers$ so that $24 | a^2 + 23$.
+	\item
+		Let $a$ and $b$ be odd integers. Thus, $a = 2m + 1$ and $b = 2n + 1$ for some $m, n \in \integers$. Assume, for the sake of contradiction, that the sum of their squares is a perfect square. Thus, for some $c \in \integers$, $a^2 + b^2 = c^2$. Note that $a^2 = 4m^2 + 4m + 1$ and $b^2 = 4n^2 + 4n + 1$ so that $c^2 = 4m^2 + 4m + 1 + 4n^2 + 4n + 1 = 4(m^2 + m + n^2 + n) + 2$, where $m^2 + m + n^2 + n \in \integers$ and $0 \leq 2 < 4$ so that the remainder when $c^2$ is divided by 4 is 2. By the division algorithm, either $c = 2k$ or $c = 2k + 1$ for some $k \in \integers$. Thus, either $c^2 = 4k^2$ or $c^2 = 4k^2 + 4k + 1 = 4(k^2 + k) + 1$, where $k^2, k^2 + k \in \integers$ and $0 \leq 0, 1 < 4$ so that the remainder when $c^2$ is divided by 4 is either 0 or 1. Thus, we get that 2 is either 0 or 1, which is absurd. Thus, the sum of the squares of two odd integers cannot be a perfect square.
+\end{enumerate}
+
+\end{document}
