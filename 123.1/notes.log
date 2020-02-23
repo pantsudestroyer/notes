@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.8)  31 JAN 2020 11:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.8)  22 FEB 2020 09:41
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -100,146 +100,158 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box29
 \enit@count@id=\count100
 \enitdp@description=\count101
+)
+(/home/kirk/.TinyTeX/texmf-dist/tex/latex/changepage/changepage.sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count102
+\cp@tempcnt=\count103
+)
+(/home/kirk/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count104
 ) (./notes.aux)
 \openout1 = `notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
-0.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 4
+3.
 
 (/home/kirk/.TinyTeX/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 30.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
 
 
 (/home/kirk/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
 
 
 (/home/kirk/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 144--148
+Underfull \hbox (badness 10000) in paragraph at lines 157--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--163
+Underfull \hbox (badness 10000) in paragraph at lines 172--176
 
  []
 
 [1
 
 {/home/kirk/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 174--176
+Underfull \hbox (badness 10000) in paragraph at lines 187--189
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--238
+Underfull \hbox (badness 10000) in paragraph at lines 247--251
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--243
+Underfull \hbox (badness 10000) in paragraph at lines 252--256
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--248
+Underfull \hbox (badness 10000) in paragraph at lines 257--261
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--253
+Underfull \hbox (badness 10000) in paragraph at lines 264--266
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--256
+Underfull \hbox (badness 10000) in paragraph at lines 267--269
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 280--282
+Underfull \hbox (badness 10000) in paragraph at lines 293--295
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--309
+Underfull \hbox (badness 10000) in paragraph at lines 320--322
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 319--321
+Underfull \hbox (badness 10000) in paragraph at lines 332--334
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--324
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--330
+Underfull \hbox (badness 10000) in paragraph at lines 338--343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--341
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--345
+Underfull \hbox (badness 10000) in paragraph at lines 355--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--348
+Underfull \hbox (badness 10000) in paragraph at lines 359--361
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--353
+Underfull \hbox (badness 10000) in paragraph at lines 362--366
 
  []
 
 
-Underfull \hbox (badness 2142) in paragraph at lines 360--365
+Underfull \hbox (badness 2142) in paragraph at lines 374--379
 \OML/cmm/m/it/10 b[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 
 = []$. If $\OML/cmm/m/it/10 b[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 a[] \OT1/
 cmr/m/n/10 = []$ then
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 360--365
+Underfull \hbox (badness 10000) in paragraph at lines 374--379
 
  []
 
-[4]
-Underfull \hbox (badness 3148) in paragraph at lines 366--373
+
+Underfull \vbox (badness 7030) has occurred while \output is active []
+
+ [4]
+Underfull \hbox (badness 3148) in paragraph at lines 380--387
 \OT1/cmr/m/n/10 Consider $\OMS/cmsy/m/n/10 G \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10
  f\OML/cmm/m/it/10 G[]\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/n/10 where $\OML/cmm/m/it/
 10 G[] \OT1/cmr/m/n/10 = (\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 n; n\OT1/cmr/m/n
@@ -247,75 +259,175 @@ Underfull \hbox (badness 3148) in paragraph at lines 366--373
  []
 
 
-Underfull \hbox (badness 3039) in paragraph at lines 366--373
+Underfull \hbox (badness 3039) in paragraph at lines 380--387
 \OT1/cmr/m/n/10 Clearly, $\OMS/cmsy/m/n/10 G$ \OT1/cmr/m/n/10 cov-ers $\U/msb/m
 /n/10 R$\OT1/cmr/m/n/10 . In par-tic-u-lar, it cov-
  []
 
 
-Underfull \hbox (badness 2181) in paragraph at lines 366--373
+Underfull \hbox (badness 2181) in paragraph at lines 380--387
 \OT1/cmr/m/n/10 ers $\OML/cmm/m/it/10 K$\OT1/cmr/m/n/10 . Since $\OML/cmm/m/it/
 10 K$ \OT1/cmr/m/n/10 is com-pact, there ex-ists a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--373
+Underfull \hbox (badness 10000) in paragraph at lines 380--387
 \OT1/cmr/m/n/10 fi-nite sub-cover $[] = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 G[];
  G[]; []  ; G[]\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 .
  []
 
 
-Underfull \hbox (badness 7468) in paragraph at lines 366--373
+Underfull \hbox (badness 7468) in paragraph at lines 380--387
 \OT1/cmr/m/n/10 Take $\OML/cmm/m/it/10 M \OT1/cmr/m/n/10 = []\OMS/cmsy/m/n/10 f
 \OML/cmm/m/it/10 m[]; m[]; []  ; m[]\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 . Thus,
  []
 
 
-Underfull \hbox (badness 4120) in paragraph at lines 366--373
+Underfull \hbox (badness 4120) in paragraph at lines 380--387
 \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 K[]
 $\OT1/cmr/m/n/10 . Take $\OMS/cmsy/m/n/10 G \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 
 f\OML/cmm/m/it/10 G[]\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 , where
  []
 
 
-Underfull \hbox (badness 2662) in paragraph at lines 366--373
+Underfull \hbox (badness 2662) in paragraph at lines 380--387
 \OT1/cmr/m/n/10 a fi-nite sub-cover $[] = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 G[
 ]; G[]; []  ; G[]\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 .
  []
 
 
-Underfull \hbox (badness 6978) in paragraph at lines 366--373
-\OT1/cmr/m/n/10 Take $\OML/cmm/m/it/10 M \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 max
-\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 m[]; m[]; []  ; m[]\OMS/cmsy/m/n/10 g$\OT1/c
-mr/m/n/10 . Thus,
+Underfull \hbox (badness 7468) in paragraph at lines 380--387
+\OT1/cmr/m/n/10 Take $\OML/cmm/m/it/10 M \OT1/cmr/m/n/10 = []\OMS/cmsy/m/n/10 f
+\OML/cmm/m/it/10 m[]; m[]; []  ; m[]\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 . Thus,
  []
 
 
-Underfull \hbox (badness 1728) in paragraph at lines 366--373
+Underfull \hbox (badness 1728) in paragraph at lines 380--387
 \OT1/cmr/m/n/10 tic-u-lar, $[\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 M; M\OT1/cmr/
 m/n/10 ]$. Since $[\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 M; M\OT1/cmr/m/n/10 ]$ 
 is com-pact,
  []
 
 
-Underfull \hbox (badness 3229) in paragraph at lines 366--373
+Underfull \hbox (badness 3229) in paragraph at lines 380--387
 \OT1/cmr/m/n/10 there ex-ists $[] = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 G[]; G[]
 ; []  ; G[]\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/n/10 such
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--373
+Underfull \hbox (badness 10000) in paragraph at lines 380--387
 
  []
 
-[5
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--392
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--435
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--440
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 441--445
+
+ []
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 446--450
+\OT1/cmr/m/n/10 Let $[] \OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10
+ x$\OT1/cmr/m/n/10 . Then there ex-ists $\OML/cmm/m/it/10 N \OMS/cmsy/m/n/10 2 
+\U/msb/m/n/10 N$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 446--450
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--486
+
+ []
+
+
+Underfull \vbox (badness 1019) has occurred while \output is active []
+
+ [6]
+Underfull \hbox (badness 10000) in paragraph at lines 518--520
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 521--523
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 524--530
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 531--535
+
+ []
+
+
+Underfull \hbox (badness 1348) in paragraph at lines 536--554
+\OT1/cmr/m/n/10 sub-se-quence of $(\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )$ con-v
+erges to $\OML/cmm/m/it/10 x$\OT1/cmr/m/n/10 , then $(\OML/cmm/m/it/10 x[]\OT1/
+cmr/m/n/10 )$
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 536--554
+[]
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 536--554
+\OT1/cmr/m/n/10 by the Bolzano-Weierstrass the-o-rem, there is a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--554
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 555--557
+
+ []
+
+
+Underfull \vbox (badness 1681) has occurred while \output is active []
+
+ [7]
+[8
 
 ] (./notes.aux) ) 
 Here is how much of TeX's memory you used:
- 1710 strings out of 494108
- 20628 string characters out of 6173990
- 90299 words of memory out of 5000000
- 5864 multiletter control sequences out of 15000+600000
+ 2068 strings out of 494108
+ 24995 string characters out of 6173990
+ 104196 words of memory out of 5000000
+ 6214 multiletter control sequences out of 15000+600000
  6244 words of font info for 25 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  30i,8n,31p,810b,221s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -328,14 +440,15 @@ e/kirk/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/kirk
 eX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/kirk/.TinyTeX/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></home/kirk/.TinyTeX/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/kirk/.TinyTeX/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy7.pfb></home/kirk/.TinyTeX/texmf-dist/fonts/type
-1/public/amsfonts/symbols/msam10.pfb></home/kirk/.TinyTeX/texmf-dist/fonts/type
-1/public/amsfonts/symbols/msbm10.pfb></home/kirk/.TinyTeX/texmf-dist/fonts/type
-1/public/amsfonts/symbols/msbm7.pfb>
-Output written on notes.pdf (5 pages, 138508 bytes).
+s/type1/public/amsfonts/cm/cmsy5.pfb></home/kirk/.TinyTeX/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy7.pfb></home/kirk/.TinyTeX/texmf-dist/fonts/type1/publ
+ic/amsfonts/symbols/msam10.pfb></home/kirk/.TinyTeX/texmf-dist/fonts/type1/publ
+ic/amsfonts/symbols/msbm10.pfb></home/kirk/.TinyTeX/texmf-dist/fonts/type1/publ
+ic/amsfonts/symbols/msbm7.pfb>
+Output written on notes.pdf (8 pages, 164517 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 87 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

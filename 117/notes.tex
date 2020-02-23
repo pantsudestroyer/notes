@@ -22,6 +22,19 @@
 
 \setlength{\parindent}{0pt}
 
+\usepackage{changepage}
+\newcommand{\boxthis}[1]{\fbox{\begin{minipage}{\linewidth}{#1}\end{minipage}}}
+
+\usepackage{etoolbox}
+\newcommand{\zerodisplayskips}{%
+  \setlength{\abovedisplayskip}{0pt}%
+  \setlength{\belowdisplayskip}{0pt}%
+  \setlength{\abovedisplayshortskip}{0pt}%
+  \setlength{\belowdisplayshortskip}{0pt}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
 \begin{document}
 
 Number Theory.
@@ -63,9 +76,9 @@ Proof. \\
 Let $S \subseteq \naturals$. Suppose that $1 \in S$ and for all $n \in \naturals$, $n \in S$ implies $n + 1 \in S$. Suppose, for the sake of contradiction, that $S \neq \naturals$. Then, $T := \naturals \setminus S$ is nonempty. By the well-ordering property, $T$ has a least element, say $t$. Thus, $t \in \naturals$ and $t \neq 1$ since $1 \in S$ so that $t > 1$. Thus, $t - 1 > 0$ so that $t - 1 \in \naturals$. Since $t$ is the least element of $T$, we get that $t - 1 \in S$. Since $t - 1 \in \naturals$, then $t - 1 \in S$ implies that $t \in S$. Hence, $t \not\in \naturals \setminus S = T$, which is a contradiction. \qed \\
 
 Theorem. Strong Induction. \\
-Let $S \subseteq \naturals$. If there exists $k \in \naturals$ such that $1, 2, \ldots, k \in S$ and for all $n \in \naturals$ such that $k \leq n$, $1, 2, \ldots, n \in S$ implies $n + 1 \in S$, then $S = \naturals$. \\
+Let $S \subseteq \naturals$. If $1 \in S$ and for all $n \in \naturals$, $1, 2, \ldots, n \in S$ implies $n + 1 \in S$, then $S = \naturals$. \\
 Proof. \\
-Let $S \subseteq \naturals$. Suppose that there exists $k \in \naturals$ such that $1, 2, \ldots, k \in S$ and for all $n \in \naturals$ such that $k \leq n$, $1, 2, \ldots, n \in S$ implies $n + 1 \in S$. Consider the set $T := \{ n \in \naturals \mid 1, 2, \ldots, n \in S \}$. Since $1, 2, \ldots, k \in S$, then $1, 2, \ldots, k \in T$. Thus, $1 \in T$. Let $n \in \naturals$. Suppose that $n \in T$. If $n < k$, then $n + 1 \leq k$ so that $n + 1 \in T$. Otherwise, $n \geq k$. Then, $1, 2, \ldots, n \in S$. Hence, by our assumption, $n + 1 \in S$. Thus, $1, 2, \ldots, n + 1 \in S$ so that $n + 1 \in T$. Therefore, by the principle of mathematical induction, $T = \naturals$.  Let $m \in \naturals$. Then, $m \in T$ so that $1, 2, \ldots, m \in S$. In particular, $m \in S$. Thus, $\naturals \subseteq S$. \qed \\
+Let $S \subseteq \naturals$. Suppose that $1 \in S$ and for all $n \in \naturals$, $1, 2, \ldots, n \in S$ implies $n + 1 \in S$. Consider the set $T := \{ n \in \naturals \mid 1, 2, \ldots, n \in S \}$. Since $1 \in S$, we have that $1 \in T$. Let $n \in \naturals$. Suppose that $n \in T$. Then, $1, 2, \ldots, n \in S$. Thus, by our assumption, $n + 1 \in S$. Hence, $1, 2, \ldots, n + 1 \in S$ so that $n + 1 \in T$. Therefore, by the principle of mathematical induction, $T = \naturals$.  Let $m \in \naturals$. Then, $m \in T$ so that $1, 2, \ldots, m \in S$. In particular, $m \in S$. Thus, $\naturals \subseteq S$. \qed \\
 
 Remark. \\
 Note that if instead of the well-ordering property, we use the principle of mathematical induction as the 10\textsuperscript{th} axiom, we can still prove strong induction. In fact, the well-ordering property, the principle of mathematical induction, and strong induction are equivalent to each other. So if we use any one of them as the 10\textsuperscript{th} axiom, we can prove the other two. The proof that they are equivalent is left as an exercise. Hint: prove PMI from WOP, prove strong induction from PMI, and prove WOP from strong induction. Note that we have already done the first two, so all that's left is to prove WOP from strong induction. \\
@@ -167,7 +180,42 @@ Let $d = (a, b)$. Note that $r = a - bq$ is a linear combination of $a$ and $b$ 
 Linear Diophantine Equations. \\
 A diophantine equation is an equation where the unknowns are integers. \\
 
+Lemma. Euclid's Lemma. \\
+If $a | bc$ and $(a, b) = 1$, then $a | c$. \\
+Proof. \\
+Suppose that $a | bc$ and $(a, b) = 1$. Then $ax + by = 1$ and $bc = am$ for some $x, y, m \in \integers$. Thus, $acx + bcy = c$ so that $acx + amy = c$. Hence, $a(cx + my) = c$ where $cx + my \in \integers$. So $a | c$. \qed \\
+
 Theorem. \\
 Let $d = (a, b)$. The diophantine equation $ax + by = c$ has a solution if and only if $d | c$. If $(x_0, y_0)$ is a particular solution, then all solutions are of the form $\left( x_0 + \frac{b}{d}t, y_0 - \frac{b}{d}t \right)$, for $t \in \integers$. \\
+Proof. \\
+Let $d = (a, b)$. \\
+Suppose $ax + by = c$ has a solution, say $(x_0, y_0)$. So $ax_0 + by_0 = c$. Since $d | a$ and $d | b$, we get that $d | ax_0 + by_0 = c$. \\
+Suppose $d | c$. Then $c = dm$ for some $m \in \integers$. By Bezout's theorem, there exist $x', y' \in \integers$ such that $ax' + by' = d$. Then, $amx' + bmy' = dm = c$. Thus, $(mx', my')$ is a solution. So $ax + by = c$ has a solution. \\
+Now, let $(x_0, y_0)$ be a solution. Suppose $(x', y')$ is another solution. So $ax_0 + by_0 = c = ax' + by'$ and then $a(x' - x_0) = b(y_0 - y')$. Hence, $\frac{a}{d}(x' - x_0) = \frac{b}{d}(y_0 - y')$ where $x' - x_0 \in \integers$. Thus, $\frac{a}{d} | \frac{b}{d}(y_0 - y')$. Since $(a, b) = d$, we know that $\left( \frac{a}{d}, \frac{b}{d} \right) = 1$. Thus, by Euclid's lemma, $\frac{a}{d} | y_0 - y'$. Hence, $y_0 - y' = \frac{a}{d}t$ for some $t \in \integers$. Thus, $a(x' - x_0) = b \left( \frac{a}{d}t \right) = \frac{ab}{d}t = a \left( \frac{b}{d}t \right)$ so that $x' - x_0 = \frac{b}{d}t$. Therefore, $x' = x_0 + \frac{b}{d}t$ and $y' = y_0 - \frac{a}{d}t$. \qed \\
+
+Fundamental Theorem of Arithmetic. \\
+
+Definition. \\
+Let $n > 1$. $n$ is said to be prime if its only positive divisors are $1$ and $n$. If $n$ is not prime, it is said to be composite. \\
+
+Theorem. \\
+If $p$ is prime and $p | ab$, then $p | a$ or $p | b$. \\
+Proof. \\
+Suppose $p$ is prime and $p | ab$. Suppose $p \nmid a$. Note that $(p, a) | p$ so that $(p, a) = 1$ or $p$. Since $p \nmid a$, we get that $(p, a) = 1$. We have $p | ab$ and $(p, a) = 1$, so by Euclid's lemma, $p | b$. \\
+
+Corollary. \\
+If $p$ is prime and $p | a_1a_2 \cdots a_k$ then $p | a_i$ for some $1 \leq i \leq k$. \\
+
+Theorem. \\
+The quick brown fox jumps right over the lazy dog. The quick brown fox jumps right over the lazy dog. The quick brown fox jumps right over the lazy dog. \\
+Proof. \\
+The quick brown fox jumps right over the lazy dog. The quick brown fox jumps right over the lazy dog. The quick brown fox jumps right over the lazy dog. \\
+\boxthis{
+	Claim. \\
+	The quick brown fox jumps right over the lazy dog. The quick brown fox jumps right over the lazy dog. The quick brown fox jumps right over the lazy dog. \\
+	Proof. \\
+	Suppose $p$ is prime and $p | ab$. Suppose $p \nmid a$. Note that $(p, a) | p$ so that $(p, a) = 1$ or $p$. Since $p \nmid a$, we get that $(p, a) = 1$. We have $p | ab$ and $(p, a) = 1$, so by Euclid's lemma, $p | b$. \qed
+}
+The quick brown fox jumps right over the lazy dog. The quick brown fox jumps right over the lazy dog. The quick brown fox jumps right over the lazy dog. \qed
 
 \end{document}

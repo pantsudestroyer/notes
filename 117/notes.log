@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.8)  1 FEB 2020 13:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.8)  3 FEB 2020 15:08
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -100,141 +100,141 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box29
 \enit@count@id=\count100
 \enitdp@description=\count101
-) (./notes.aux)
+)
+(/home/kirk/.TinyTeX/texmf-dist/tex/latex/changepage/changepage.sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count102
+\cp@tempcnt=\count103
+)
+(./notes.aux)
 \openout1 = `notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
-0.
-
-(/home/kirk/.TinyTeX/texmf-dist/tex/latex/base/omscmr.fd
+3.
+ (/home/kirk/.TinyTeX/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 30.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
 
 
 (/home/kirk/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
 
 
 (/home/kirk/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 1383) in paragraph at lines 60--64
+Underfull \hbox (badness 1383) in paragraph at lines 63--67
 []\OT1/cmr/m/n/10 Theorem. Prin-ci-ple of Math-e-mat-i-cal In-duc-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--64
+Underfull \hbox (badness 10000) in paragraph at lines 63--67
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--69
+Underfull \hbox (badness 10000) in paragraph at lines 68--72
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--72
+Underfull \hbox (badness 10000) in paragraph at lines 73--75
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--78
+Underfull \hbox (badness 10000) in paragraph at lines 76--81
 
  []
 
 [1
 
 {/home/kirk/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 79--84
+Underfull \hbox (badness 10000) in paragraph at lines 82--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--88
+Underfull \hbox (badness 10000) in paragraph at lines 89--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
 
  []
 
 
-Underfull \hbox (badness 3492) in paragraph at lines 126--130
+Underfull \hbox (badness 3492) in paragraph at lines 129--133
 \OT1/cmr/m/n/10 by the well-ordering prop-erty, $\OML/cmm/m/it/10 S$ \OT1/cmr/m
 /n/10 has a least
  []
 
 
-Underfull \hbox (badness 3343) in paragraph at lines 126--130
+Underfull \hbox (badness 3343) in paragraph at lines 129--133
 \OT1/cmr/m/n/10 el-e-ment, say $\OML/cmm/m/it/10 n$\OT1/cmr/m/n/10 . By the di-
 vi-sion al-go-rithm,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--130
+Underfull \hbox (badness 10000) in paragraph at lines 129--133
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 131--133
+Underfull \hbox (badness 10000) in paragraph at lines 134--136
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--139
+Underfull \hbox (badness 10000) in paragraph at lines 137--142
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--144
+Underfull \hbox (badness 10000) in paragraph at lines 143--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--149
+Underfull \hbox (badness 10000) in paragraph at lines 148--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--152
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--159
+Underfull \hbox (badness 10000) in paragraph at lines 156--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--166
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--169
+Underfull \hbox (badness 10000) in paragraph at lines 165--169
 
  []
 
@@ -243,15 +243,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--172
 
  []
 
-[3] (./notes.aux) ) 
+
+Underfull \hbox (badness 1107) in paragraph at lines 173--177
+\OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 bc \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 am$
+ \OT1/cmr/m/n/10 for some $\OML/cmm/m/it/10 x; y; m \OMS/cmsy/m/n/10 2 \U/msb/m
+/n/10 Z$\OT1/cmr/m/n/10 . Thus,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--185
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
+
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 199--210
+[]
+ []
+
+[4] (./notes.aux) ) 
 Here is how much of TeX's memory you used:
- 1705 strings out of 494108
- 20574 string characters out of 6173990
- 93299 words of memory out of 5000000
- 5861 multiletter control sequences out of 15000+600000
+ 1750 strings out of 494108
+ 21281 string characters out of 6173990
+ 93595 words of memory out of 5000000
+ 5902 multiletter control sequences out of 15000+600000
  5339 words of font info for 22 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 30i,4n,31p,971b,181s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,5n,31p,971b,181s stack positions out of 5000i,500n,10000p,200000b,80000s
 </home/kirk/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmex10.pfb></home/kirk/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 mi10.pfb></home/kirk/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.p
@@ -261,10 +303,10 @@ k/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/kirk/.Ti
 nyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/kirk/.TinyTeX/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></home/kirk/.TinyTeX/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on notes.pdf (3 pages, 100064 bytes).
+Output written on notes.pdf (4 pages, 104792 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 53 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

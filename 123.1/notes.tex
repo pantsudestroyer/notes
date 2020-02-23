@@ -22,6 +22,19 @@
 
 \setlength{\parindent}{0pt}
 
+\usepackage{changepage}
+\newcommand{\boxthis}[1]{\fbox{\begin{minipage}{\linewidth}{#1}\end{minipage}}}
+
+\usepackage{etoolbox}
+\newcommand{\zerodisplayskips}{%
+  \setlength{\abovedisplayskip}{0pt}%
+  \setlength{\belowdisplayskip}{0pt}%
+  \setlength{\abovedisplayshortskip}{0pt}%
+  \setlength{\belowdisplayshortskip}{0pt}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
 \begin{document}
 
 Advanced Calculus I
@@ -369,7 +382,206 @@ A set $K \subseteq \reals$ is compact if and only if it is closed and bounded. \
 Proof. \\
 Suppose $K$ is compact. \\
 Consider $\mathcal{G} = \{ G_n \}$ where $G_n = (-n, n)$. Clearly, $\mathcal{G}$ covers $\reals$. In particular, it covers $K$. Since $K$ is compact, there exists a finite subcover $\mathcal{G'} = \{ G_{m_1}, G_{m_2}, \cdots, G_{m_n} \}$. Take $M = \max \{ m_1, m_2, \cdots, m_n \}$. Thus, $\bigcup_{i = 1}^n G_{m_i} = (-M, M) \supseteq K$, so that $K$ is bounded. \\
-Let $x \in K\complement$. Take $\mathcal{G} = \{ G_n \}$, where $G_n = \{ y \mid |x - y| > \frac{1}{n} \}$. Then, $\bigcup_{n = 1}^\infty G_n = \reals \setminus \{ x \} \supseteq K$. Since $K$ is compact, there exists a finite subcover $\mathcal{G'} = \{ G_{m_1}, G_{m_2}, \cdots, G_{m_n} \}$. Take $M = max \{ m_1, m_2, \cdots, m_n \}$. Thus, $\bigcup_{i = 1}^n G_{m_i} = G_M \supseteq K$. Take $\eps = \frac{1}{M}$ so that $N_\eps(x) \subseteq G_M\complement$ and thus, $N_\eps(x) \subseteq K\complement$. \\
+Let $x \in K\complement$. Take $\mathcal{G} = \{ G_n \}$, where $G_n = \{ y \mid |x - y| > \frac{1}{n} \}$. Then, $\bigcup_{n = 1}^\infty G_n = \reals \setminus \{ x \} \supseteq K$. Since $K$ is compact, there exists a finite subcover $\mathcal{G'} = \{ G_{m_1}, G_{m_2}, \cdots, G_{m_n} \}$. Take $M = \max \{ m_1, m_2, \cdots, m_n \}$. Thus, $\bigcup_{i = 1}^n G_{m_i} = G_M \supseteq K$. Take $\eps = \frac{1}{M}$ so that $N_\eps(x) \subseteq G_M\complement$ and thus, $N_\eps(x) \subseteq K\complement$. \\
 Suppose $K$ is closed and bounded. Let $\mathcal{G} = \{ G_\alpha \}$ be an open cover for $K$. Since $K$ is bounded, then there exists $M > 0$ such that $K \subseteq [-M, M]$. Since $K$ is closed, $K\complement$ is open. Note that $\bigcup G_\alpha \supseteq K$ so that $\bigcup G_\alpha \cup K\complement \supseteq K \cup K\complement = \reals$. Thus, $\mathcal{G} \cup \{ K\complement \}$ is an open cover for $\reals$ and in particular, $[-M, M]$. Since $[-M, M]$ is compact, there exists a finite subcover of $\mathcal{G} \cup \{ K\complement \}$ so that there exists $\mathcal{G'} = \{ G_{m_1}, G_{m_2}, \cdots, G_{m_n} \}$ such that $\bigcup_{i = 1}^n G_{m_i} \cup K\complement \supseteq [-M, M] \supseteq K$. Thus, $\bigcup_{i = 1}^n G_{m_i} \supseteq K$. \qed \\
+
+Sequences in $\reals$ \\
+
+Definition. \\
+A sequence in $\reals$ is a function defined on the set $\naturals$ and whose range is contained in $\reals$. \\
+
+Definition. \\
+Let $(x_n)$ be a sequence of real numbers. We say that $(x_n)$ approaches a real number $x$, denoted by $\lim x_n = x$ if and only if for every $\eps > 0$, there exists $N \in \naturals$ such that if $n \in N$ and $n \geq N$, $|x_n - x| < \eps$. In this case, we say that $(x_n)$ is convergent. Otherwise, we say that $(x_n)$ is divergent. \\
+
+Remark.
+\begin{enumerate}
+	\item
+	$\lim x_n = x$ \\
+	$\Leftrightarrow$ $\forall \eps > 0$, $\exists N \in \naturals$ such that if $n \geq N$, then
+	$$|x_n - x| < \eps$$
+	$\Leftrightarrow$ $\forall \eps > 0$, $\exists N \in \naturals$ such that $\forall n \geq N$,
+	$$|x_n - x| < \eps$$
+	\item
+	$(x_n)$ is convergent $\Leftrightarrow$ $\exists x \in \reals$ such that $\lim x_n = x$. \\
+	$(x_n)$ is divergent $\Leftrightarrow$ $\forall x \in \reals$, $\exists \eps > 0$ such that $\forall N \in \naturals$, $\exists n \geq N$ such that $|x_n - x| \geq \eps$.
+	\item
+	$\lim x_n = x$ implies that there are only a finite number of terms outside of $N_\eps(x)$.
+	\item
+	If $N$ satisfies our definition, then any $N_0 > N$ will also satisfy our definition.
+\end{enumerate} \br
+
+Example.
+\begin{enumerate}
+	\item
+	$\lim c = c$. \\
+	Proof. \\
+	Let $\eps > 0$. Choose $N = 1$. Thus if $n \geq N$ then $|x_n - x| = |c - c| = 0 < \eps$.
+	\item
+	$\lim \frac{1}{n} = 0$. \\
+	Proof. \\
+	Let $\eps > 0$. By the Archimedean property, there exists $N \in \naturals$ such that $\frac{1}{N} < \eps$. Thus if $n \geq N$ then $|x_n - x| = |\frac{1}{n} - 0| = \frac{1}{n} \leq \frac{1}{N} < \eps$.
+	\item
+	$\lim \frac{n^2 - 5}{n^2 + 5} = 1$. \\
+	Proof. \\
+	Let $\eps > 0$. By the Archimedean property, there exists $N \in \naturals$ such that $\frac{1}{N} < \frac{\eps}{10}$. Thus if $n \geq N$ then $|x_n - x| = |\frac{n^2 - 5}{n^2 + 5} - 1| = |\frac{-10}{n^2 + 5}| = \frac{10}{n^2 + 5} < \frac{10}{n^2} \leq \frac{10}{n} \leq \frac{10}{N} < \eps$.
+	\item
+	Let $\eps > 0$. By the Archimedean property, there exists $N \in \naturals$ such that $\frac{10}{\eps} + 5 < N$. Thus if $n \geq N$ then $|x_n - x| = |\frac{n^2 + 5}{n^2 - 5} - 1| = |\frac{10}{n^2 - 5}| = \frac{10}{n^2 - 5} \leq \frac{10}{N - 5} < \eps$.
+\end{enumerate} \br
+
+Theorem. \\
+If for all $\eps > 0$, $0 \leq x < \eps$, then $x = 0$. \\
+Proof. \\
+Let $\eps > 0$. Suppose that $0 \leq x < \eps$. Then $0 \leq x$. Suppose, for the sake of contradiction, that $x \neq 0$. Then $0 < x$. Take $\eps = x$. Then $0 \leq x < x$ so that $x < x$, which is a contradiction. Thus, $x = 0$. \qed \\
+
+Corollary. \\
+If $|x - y| < \eps$ for all $\eps > 0$, then $x = y$. \\
+Proof. \\
+Exercise. \qed \\
+
+Theorem. \\
+If $\lim x_n$ exists, then it is unique. \\
+Proof. \\
+Suppose that $x$ and $y$ are limits of $x_n$. Let $\eps > 0$. Since $\lim x_n = x$, there exists $N_1 \in \naturals$ such that $|x_n - x| < \frac{\eps}{2}$ for all $n \geq N_1$. Since $\lim x_n = y$, there exists $N_2 \in \naturals$ such that $|x_n - y| < \frac{\eps}{2}$ for all $n \geq N_2$. Take $N = \max \{ N_1, N_2 \}$. Then $|x_N - x| < \frac{\eps}{2}$ so that $-\frac{\eps}{2} < x_N - x < \frac{\eps}{2}$. Also, $|y - x_N| = |x_N - y| < \frac{\eps}{2}$ so that $-\frac{\eps}{2} < y - x_N < \frac{\eps}{2}$. Hence, $-\eps < x_N - x + y - x_N < \eps$ so that $|y - x| < \eps$. Thus, by the previous corollary, $x = y$. \qed \\
+
+Theorem. \\
+If $(x_n)$ is convergent then $\{ x_n \mid n \in \naturals \}$ is bounded. \\
+Proof. \\
+Let $\lim x_n = x$. Then there exists $N \in \naturals$ such that $|x_n - x| < 1$ for all $n \geq N$. Then $|x_n| - |x| \leq |x_n - x| < 1$ so that $|x_n| < 1 + |x|$ for all $n \geq N$. Take $M = \max \{ 1 + |x|, |x_1|, |x_2|, \ldots, |x_{N - 1} \}$. Then $|x_n| \leq M$ for all $n \in \naturals$, so that $\{ x_n \mid n \in \naturals \}$ is bounded. \qed \\
+
+Definition. \\
+Let $(x_n)$ and $(y_n)$ be sequences.
+\begin{enumerate}
+	\item
+	$(x_n) + (y_n) := (x_n + y_n)$
+	\item
+	$(x_n)(y_n) := (x_ny_n)$
+	\item
+	$\frac{(x_n)}{(y_n)} := (\frac{x_n}{y_n})$, $y_n \neq 0$
+\end{enumerate} \br
+
+Theorem. \\
+Let $(x_n)$ and $(y_n)$ be convergent sequences with $\lim x_n = x$ and $\lim y_n = y$. Then the following are true.
+\begin{enumerate}
+	\item
+	$\lim x_n + y_n = x + y$
+	\item
+	$\lim x_ny_n = xy$
+	\item
+	$\lim \frac{1}{x_n} = \frac{1}{x}$, provided that $x \neq 0$ and $x_n \neq 0$ $\forall n \in \naturals$
+\end{enumerate}
+Proof.
+\begin{enumerate}
+	\item
+	Let $\eps > 0$. Since $\lim x_n = x$, there exists $N_1 \in \naturals$ such $|x_n - x| < \frac{\eps}{2}$ for any $n \geq N_1$. Since $\lim y_n = y$, there exists $N_2 \in \naturals$ such that $|y_n - y| < \frac{\eps}{2}$ for any $n \geq N_2$. Take $N = \max \{ N_1, N_2 \}$. Thus if $n \geq N$, then $|(x_n + y_n) - (x + y)| = |(x_n - x) + (y_n - 2)| \leq |x_n - x| + |y_n - y| < \frac{\eps}{2} + \frac{\eps}{2} = \eps$.
+	\item
+	Let $\eps > 0$. Since $(y_n)$ is convergent, there exists $M > 0$ such that $|y_n| < M$ for all $n \in \naturals$. Take $K = \max \{ M, |x| \}$. Since $\lim x_n = x$, then there exists $N_1 \in \naturals$ such that $|x_n - x| < \frac{\eps}{2K}$ for any $n \geq N_1$. Since $\lim y_n = y$, there exists $N_2 \in \naturals$ such that $|y_n - y| < \frac{\eps}{2K}$ for any $n \geq N_2$. Take $N = \max \{ N_1, N_2 \}$. Thus if $n \geq N$, then $|x_ny_n - xy| = |(x_ny_n - xy_n) + (xy_n - xy)| \leq |y_n(x_n - x)| + |x(y_n - y)| = |y_n| \cdot |x_n - x| + |x| \cdot |y_n - y| < K|x_n - x| + K|y_n - y| < \frac{\eps}{2} + \frac{\eps}{2} = \eps$.
+	\item
+	Let $\eps > 0$. Since $\lim x_n = x$ and $x \neq 0$, there exists $N_1 \in \naturals$ such that $|x_n - x| < \frac{|x|}{2}$ for any $n \geq N_1$. Hence, $|x| - |x_n| < \frac{|x|}{2}$ so that $\frac{|x|}{2} < |x_n|$. And since $\lim x_n = x$, there exists $N_2 \in \naturals$ such that $|x_n - x| < \frac{|x|^2}{2}$ for any $n \geq N_2$. Take $N = \max \{ N_1, N_2 \}$. Thus if $n \geq N$, then $|\frac{1}{x_n} - \frac{1}{x}| = |\frac{x - x_n}{x_nx}| = \frac{|x_n - x|}{|x_n| \cdot |x|} < \frac{\frac{x}{2}^2 \cdot \eps}{\frac{|x|}{2} \cdot |x|} = \eps$. \qed
+\end{enumerate} \br
+
+Theorem. \\
+If $(x_n)$ diverges and $(y_n)$ converges then $(x_n + y_n)$ diverges. \\
+Proof. \\
+Suppose, for the sake of contradiction, that $(x_n + y_n)$ converges. Consider $(z_n) := (x_n + y_n) + (-1)(y_n)$, then this sequence converges by the previous theorem. Since $(z_n) = (y_n)$, we have a contradiction. \qed \\
+
+Theorem. \\
+Let $(x_n)$ and $(y_n)$ be convergent sequences. Then the following are true.
+\begin{enumerate}
+	\item
+	If $x_n \geq 0$ for any $n \in \naturals$, then $\lim x_n \geq 0$.
+	\item
+	If $x_n \geq y_n$ for any $n \in \naturals$, then $\lim x_n \geq \lim y_n$.
+\end{enumerate}
+Proof.
+\begin{enumerate}
+	\item
+	Let $\lim x_n = x$. Suppose, for the sake of contradiction, that $x < 0$. Then $-x > 0$, so that there exists $N \in \naturals$ such that $|x_n - x| < -x$ for any $n \geq N$. In particular, $|x_N - x| < -x$. But $|x_N - x| = x_N - x$, so that $x_N - x < -x$. Hence, $x_N < 0$, which is a contradiction. Thus, $x \geq 0$.
+	\item
+	Consider $(z_n) = (x_n) + (-1)(y_n)$. By a previous theorem, $(z_n)$ is convergent. Also, $z_n = x_n - y_n \geq 0$ for any $n \in \naturals$ so that $\lim z_n \geq 0$. But $\lim z_n = \lim x_n + -1 \cdot \lim y_n = \lim x_n - \lim y_n$. Hence, $\lim x_n - \lim y_n \geq 0$ so that $\lim x_n \geq \lim y_n$. \qed
+\end{enumerate} \br
+
+Theorem. Squeeze Theorem for Limits. \\
+If $(x_n)$, $(y_n)$, and $(z_n)$ are sequences satisfying
+\begin{enumerate}
+	\item
+	$x_n \leq y_n \leq z_n$ for any $n \in \naturals$ and
+	\item
+	$(x_n)$ and $(z_n)$ are convergent with $\lim x_n = x$ and $\lim z_n = x$,
+\end{enumerate}
+then $\lim y_n = x$. \\
+Proof. \\
+Let $\eps > 0$. Since $\lim x_n = x$, there exists $N_1 \in \naturals$ such that if $n \geq N_1$,
+$$|x_n - x| < \eps$$
+$$\Leftrightarrow -\eps < x_n - x < \eps \text{.}$$
+Since $\lim z_n = x$, there exists $N_2 \in \naturals$ such that if $n \geq N_2$,
+$$|z_n - x| < \eps$$
+$$\Leftrightarrow -\eps < z_n - x < \eps \text{.}$$
+Take $N = \max \{ N_1, N_2 \}$. Thus if $n \geq N$, then $-\eps < x_n - x \leq y_n - x \leq z_n - x < \eps$ so that $|y_n - x| < \eps$. \qed \\
+
+Remark. \\
+In general, we can assume that $\exists N \in \naturals$ such that $x_n \leq y_n \leq z_n$ $\forall n \geq N$. \\
+
+Theorem. Monotone Subsequence Theorem. \\
+Every sequence has a monotone subsequence. \\
+Proof. \\
+Let $(x_n)$ be a subsequence. Let $S$ be the set of peaks of $(x_n)$, $S := \{ x_m \mid m \leq n \Rightarrow x_m \geq x_n \}$. \\
+Suppose $S$ is infinite. Since for all $m_n$ such that $x_{m_n} \in S$, then $x_{m_{n_1}} \geq x_{m_{n_2}}$ if $m_{n_1} \geq m_{n_2}$. Thus the subsequence $(x_{m_n})$ is decreasing. \\
+Now, suppose that $S$ is finite. Thus, there exists $N_1 \in \naturals$ such that $N_1 > m$ for any $x_m \in S$. So $x_{N_1}$ is not a peak, so that there exists $N_2 > N_1$ such that $x_{N_1} < x_{N_2}$. So $x_{N_2}$ is not a peak so that there exists $N_3$ such that $x_{N_2} < x_{N_3}$. Continuing this, we obtain a strictly increasing subseqence $(x_{N_k})$. \qed \\
+
+Theorem. Bolzano-Weierstrass Theorem. \\
+Every bounded sequence has a convergent subsequence. \\
+Proof. \\
+Let $(x_n)$ be a bounded sequence. By the monotone subsequence theorem, there exists $(x_{n_k})$ monotone subsequence of $(x_n)$. Sinc $(x_n)$ is bounded, then $(x_{n_k})$ is also bounded. By the monotone convergence theorem, $(x_{n_k})$ is convergent. \qed \\
+
+Theorem. \\
+Let $(x_n)$ be a bounded sequence. If every convergent subsequence of $(x_n)$ converges to $x$, then $(x_n)$ converges to $x$. \\
+Proof. \\
+Suppose, for the sake of contradiction, that $(x_n)$ does not converge to $x$. Then there exists $\eps > 0$ such that for any $N \in \naturals$, there exists $n \geq N$ such that $|x_n - x| \geq \eps$. \\
+\boxthis{
+Claim. \\
+There exists a subsequence $(x_{n_k})$ such that
+$$|x_{n_k} - x| \geq \eps \text{.}$$
+Proof. \\
+Indeed, if $N = 1$, there exists $x_n$ such that
+$$|x_{n_1} - x| \geq \eps \text{.}$$
+Also, if $N = n_1 + 1$, there exists $x_{n_2}$ such that
+$$|x_{n_2} - x| \geq \eps \text{.}$$
+Continuing this for $N = n_k + 1$, there exists $X_{n_{k + 1}}$ such that
+$$|x_{k + 1} - x| \geq \eps \text{.}$$
+And we are done.
+}
+Since $(x_n)$ is bounded, then $(x_{n_k})$ is bounded. Thus by the Bolzano-Weierstrass theorem, there is a convergent subsequence of $(x_{n_k})$, say $(x_{n_k}')$. By assumption, $\lim x_{n_k}' = x$. Thus there exists $N \in \naturals$ such that if $n_k \geq N$ then $|x_{n_k}' - x| < \eps$. This is a contradiction since $|x_{n_k}' - x| \geq \eps$ by construction of $(x_{n_k})$. \qed \\
+
+Definition. \\
+Let $(x_n)$ be a sequence. We say that $y$ is a subsequential limit of $(x_n)$ if there exists a subsequence $(x_{n_k})$ that converges to $y$. \\
+
+Remark.
+\begin{enumerate}
+	\item
+	The subsequence $(x_n)$ will diverge if it has at least two distinct subsequential limits.
+	\item
+	Sometimes called a limit point, but definitely not a cluster point.
+	\item
+	$y$ is a subsequential limit of $(x_n)$ if and only if for any $\eps > 0$, $N_\eps(y)$ has infinitely many terms of $(x_n)$.
+\end{enumerate} \br
+
+Definition. \\
+Let $(x_n)$ be a bounded sequence. Let $a_n = \inf \{ x_m \mid m \geq n \}$ and $b_n = \sup \{ x_m \mid m \geq n \}$.
+\begin{enumerate}
+	\item
+	The limit inferior of $(x_n)$, denoted by $\liminf$, is given by $\lim a_n$.
+	\item
+	The limit superior of $(x_n)$, denoted by $\limsup$, is given by $\lim b_n$.
+\end{enumerate} \br
+
+Remark. \\
+\begin{enumerate}
+	\item
+	The sequences $(a_n)$ and $(b_n)$ are monotone. In particular, $(a_n)$ is increasing and $(b_n)$ is decreasing.
+	\item
+	If $(x_n)$ is bounded, the $\liminf$ and $\limsup$ will always exist.
+\end{enumerate} \br
+
+Example. \\
 
 \end{document}

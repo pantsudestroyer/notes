@@ -22,6 +22,19 @@
 
 \setlength{\parindent}{0pt}
 
+\usepackage{changepage}
+\newcommand{\boxthis}[1]{\fbox{\begin{minipage}{\linewidth}{#1}\end{minipage}}}
+
+\usepackage{etoolbox}
+\newcommand{\zerodisplayskips}{%
+  \setlength{\abovedisplayskip}{0pt}%
+  \setlength{\belowdisplayskip}{0pt}%
+  \setlength{\abovedisplayshortskip}{0pt}%
+  \setlength{\belowdisplayshortskip}{0pt}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
 \begin{document}
 
 Recall. Let $f : A \rightarrow B$. Then $f$

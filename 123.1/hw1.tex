@@ -1,0 +1,99 @@
+\documentclass[twocolumn]{article}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\setlist{nosep}
+
+\newcommand{\qed}{$\blacksquare$}
+\newcommand{\br}{\vspace{\baselineskip}}
+\newcommand{\COMPLEMENT}{^\mathsf{c}}
+\let\complement\COMPLEMENT
+\let\emptyset\varnothing
+\let\eps\varepsilon
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\integers}{\mathbb{Z}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\irrationals}{\rationals\complement}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\complex}{\mathbb{C}}
+
+\setlength{\parindent}{0pt}
+
+\usepackage{changepage}
+\newcommand{\boxthis}[1]{\fbox{\begin{minipage}{\linewidth}{#1}\end{minipage}}}
+
+\usepackage{etoolbox}
+\newcommand{\zerodisplayskips}{%
+  \setlength{\abovedisplayskip}{0pt}%
+  \setlength{\belowdisplayskip}{0pt}%
+  \setlength{\abovedisplayshortskip}{0pt}%
+  \setlength{\belowdisplayshortskip}{0pt}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+Math 123.1 \\
+Homework 1 \\
+Kirk Bamba
+
+\begin{enumerate}
+	\item
+	Let $u \in \reals$ and $S \subseteq \reals$ such that $S \neq \emptyset$. Suppose that for every $n \in \naturals$, $u + \frac{1}{n}$ is an upper bound of $S$ and $u - \frac{1}{n}$ is an upper bound of $S$. \\
+	Suppose that $u$ is not an upper bound of $S$. Then $u < x$ for some $x \in S$. Let $\eps = x - u > 0$. Then, by the archimedean property, there exists $n \in \naturals$ such that $\frac{1}{n} < \eps$. So $u + \frac{1}{n} < u + \eps = x$, which is absurd since $u + \frac{1}{n}$ is an upper bound of $S$. Thus, $u$ is an upper bound of $S$. \\
+	Suppose that $u$ is not the supremum of $S$. Then, there exists some upper bound $u'$ of $S$ such that $u' < u$. Let $\eps' = u - u' > 0$. Then by the archimedean property, there exists $n' \in \naturals$ such that $\frac{1}{n'} < \eps'$. Hence, $\frac{1}{n'} < u - u'$ so that $u' < u - \frac{1}{n'}$. But since $u - \frac{1}{n'}$ is not an upper bound of $S$, there exists $x' \in S$ such that $u - \frac{1}{n'} < x'$. Then $u' < x'$, which contradicts our assumption that $u'$ is an upper bound of $S$. Therefore, $u$ is the supremum of $S$, as required.
+	
+	\item
+	Lemma 1. \\
+	Let $R,\, S$ be sets. Suppose that $R$ is closed and $S \subseteq R$. Then $\overline{S} \subseteq R$. \\
+	Proof. \\
+	Let $R,\, S$ be sets. Suppose that $R$ is closed and $S \subseteq R$. Let
+	$$T := \{ U \mid S \subseteq U \text{, } U \text{ is closed} \} \text{.}$$
+	Then $\overline{S} = \bigcap T$ and $R \in T$. Hence, $\overline{S} \cap R = \overline{S}$ so that $\overline{S} \subseteq R$, as required. \\
+	Lemma 2. \\
+	$S \subseteq \overline{S}$ for any set $S$. \\
+	Proof. \\
+	Let $S$ be a set. Let
+	$$T := \{ U \mid S \subseteq U \text{, } U \text{ is closed} \} \text{.}$$
+	Suppose that $S \not\subseteq \overline{S}$. Then for some $x \in S$, $x \not\in \overline{S}$. Since $S = \bigcap T$, then there exists $X \in T$ such that $x \not\in X$. But $S \subseteq X$ and $x \in S$ so that $x \in X$. Clearly, this is a contradiction. Hence, $S \subseteq \overline{S}$, as required. \\
+	
+	Let $A,\, B$ be sets. 
+	by Lemma 2, we have that $A \subseteq \overline{A}$ and $B \subseteq \overline{B}$. Hence, $A \cup B \subseteq \overline{A} \cup \overline{B}$. Recall that the finite union and arbitrary intersection of closed sets are closed sets. Hence, both $\overline{A} = \bigcap \{ U \mid A \subseteq U \text{, } U \text{ is closed} \}$ and $\overline{B} = \bigcap \{ U \mid B \subseteq U \text{, } U \text{ is closed} \}$ are closed. So $\overline{A} \cup \overline{B}$ is a union of two closed sets and is thus also closed. Hence, by Lemma 1, $\overline{A \cup B} \subseteq \overline{A} \cup \overline{B}$. \\
+	Note that $\overline{A \cup B} = \bigcap \{ U \mid A \cup B \subseteq U \text{, } U \text{ is closed} \}$ is also an intersection of closed sets and is thus closed. Also, by Lemma 2, $A \cup B \subseteq \overline{A \cup B}$. But $A \subseteq A \cup B$ and $B \subseteq A \cup B$ so that $A \subseteq \overline{A \cup B}$ and $B \subseteq \overline{A \cup B}$. Hence, by Lemma 1, $\overline{A} \subseteq \overline{A \cup B}$ and $\overline{B} \subseteq \overline{A \cup B}$. Thus, $\overline{A} \cup \overline{B} \subseteq \overline{A \cup B}$. \\
+	Therefore, $\overline{A \cup B} = \overline{A} \cup \overline{B}$, as required.
+	
+	\item
+	\begin{enumerate}
+		\item
+		Let $n \in \naturals$. So $4x_n (1 - x_{n + 1}) > 1$ and $0 < x_n$. Hence, $1 - x_{n + 1} > \frac{1}{4x_n}$ so that $x_{n + 1} < 1 - \frac{1}{4x_n}$. \\
+		\boxthis{
+		Claim. \\
+		$1 - \frac{1}{4y} \leq y$ for any $y > 0$. \\
+		Proof. \\
+		Let $y > 0$. So $\frac{1}{2y} - 1 \in \reals$ so that by the trivial inequality, $(\frac{1}{2y} - 1)^2 \geq 0$. Hence, $\frac{1}{4y^2} - \frac{1}{y} + 1 \geq 0$. So $1 \geq \frac{1}{y} - \frac{1}{4y^2}$. Multiplying by $y$, we get $y \geq 1 - \frac{1}{4y}$, as required.
+		}
+		In particular, $1 - \frac{1}{4x_n} \leq x_n$ so that $x_{n + 1} < x_n$. Thus, $(x_n)$ is decreasing. Therefore, $(x_n)$ is monotone, as required.
+		\item
+		Note that $(x_n)$ is bounded above by 1 and bounded below by 0. Hence, $(x_n)$ is bounded. So by the monotone convergence theorem, $(x_n)$ converges. Then there exists $x \in \reals$ such that $x = \lim x_n$. Then by a previous theorem, $x = \lim x_{n + 1}$. Consider the sequence
+		\begin{align*}
+		(z_n)  := &\, (4x_n (1 + (-1) \cdot x_{n + 1})) \\
+				= &\, (4x_n (1 - x_{n + 1})) \text{.}
+		\end{align*}
+		Note that $(4)$, $(x_n)$, $(1)$, $(-1)$, and $(x_{n + 1})$ are all convergent sequences so that by a previous theorem, $(z_n)$ converges and 
+		\begin{align*}
+		\lim z_n 	= &\, 4 (\lim x_n) (1 + (-1) \cdot (\lim x_{n + 1}) \\
+					= &\, 4x (1 + (-1) \cdot x) \\
+					= &\, 4x - 4x^2 \text{.}
+		\end{align*} But $z_n = 4x_n (1 - x_{n + 1}) > 1$ for all $n \in \naturals$ so that $\lim z_n \geq \lim 1$. Hence, $4x - 4x^2 \geq 1$. So $0 \geq 4x^2 - 4x + 1 = (2x - 1)^2$. But $2x - 1 \in \reals$ so that by the trivial inequality, $0 \leq (2x - 1)^2$. Thus, $(2x - 1)^2 = 0$. Hence, $2x - 1 = 0$ so that $x = \frac{1}{2}$. Therefore, the limit of $(x_n)$ is $\frac{1}{2}$.
+	\end{enumerate}
+\end{enumerate}
+
+\end{document}
