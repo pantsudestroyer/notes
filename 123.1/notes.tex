@@ -6,7 +6,7 @@
 
 \setlist{nosep}
 
-\newcommand{\qed}{$\blacksquare$}
+\newcommand{\qed}{$\square$}
 \newcommand{\br}{\vspace{\baselineskip}}
 \newcommand{\COMPLEMENT}{^\mathsf{c}}
 \let\complement\COMPLEMENT
@@ -558,7 +558,7 @@ Let $(x_n)$ be a sequence. We say that $y$ is a subsequential limit of $(x_n)$ i
 Remark.
 \begin{enumerate}
 	\item
-	The subsequence $(x_n)$ will diverge if it has at least two distinct subsequential limits.
+	The sequence $(x_n)$ will diverge if it has at least two distinct subsequential limits.
 	\item
 	Sometimes called a limit point, but definitely not a cluster point.
 	\item
@@ -574,7 +574,7 @@ Let $(x_n)$ be a bounded sequence. Let $a_n = \inf \{ x_m \mid m \geq n \}$ and 
 	The limit superior of $(x_n)$, denoted by $\limsup$, is given by $\lim b_n$.
 \end{enumerate} \br
 
-Remark. \\
+Remark.
 \begin{enumerate}
 	\item
 	The sequences $(a_n)$ and $(b_n)$ are monotone. In particular, $(a_n)$ is increasing and $(b_n)$ is decreasing.
@@ -582,6 +582,142 @@ Remark. \\
 	If $(x_n)$ is bounded, the $\liminf$ and $\limsup$ will always exist.
 \end{enumerate} \br
 
+Remark.
+\begin{enumerate}
+	\item
+	The limit inferior and superior are subsequential limit points of $(x_n)$.
+	\item
+	Every subsequential limit $y$ of $(x_n)$ satisfies
+	$$\liminf x_n \leq y \leq \limsup x_n \text{.}$$
+	\item
+	$(x_n)$ converges to $x$ if and only if $\liminf x_n = \limsup x_n = x$.
+\end{enumerate} \br
+
+Cauchy Sequences. \\
+
+Definition. \\
+A sequence $(x_n)$ is a Cauchy sequence if for every $\eps > 0$, there exists $N \in \naturals$ such that if $n,\, m \geq N$, then
+$$|x_n - x_m| < \eps\text{.}$$ \\
+
 Example. \\
+$(\frac{1}{n})$ is Cauchy. \\
+Proof. \\
+Let $\eps > 0$. Choose $N > \frac{2}{\eps}$. If $n,\, m \geq N$, then
+\begin{align*}
+|x_n - x_m|\, 	& = \left| \frac{1}{n} - \frac{1}{m} \right| \\
+				& \leq \left| \frac{1}{n} \right| + \left| \frac{1}{m} \right| \\
+				&\leq \frac{1}{n} + \frac{1}{m} \\
+				&\leq \frac{1}{N} + \frac{1}{N} = \frac{2}{N} \\
+				&< \eps \text{. \qed}
+\end{align*} \\
+
+Theorem. \\
+A Cauchy sequence is bounded. \\
+Proof. \\
+Let $(x_n)$ be Cauchy. Then there exists $N \in \naturals$ such that if $n,\, m \in \geq N$,
+$$|x_n - x_m| < 1 \text{.}$$
+In particular, for all $m \geq N$,
+$$|x_N - x_m| < 1 \text{.}$$
+Hence $|x_m| < 1 + |x_N|$ for any $m \geq N$. Take $M = \max \{ 1 + |x_n|, |x_1|, |x_2|, \ldots, |x_{N - 1}| \}$. Thus for all $m \in \naturals$,
+$$|x_m| \leq M$$
+and thus $(x_n)$ is bounded. \qed \\
+
+Theorem. Cauchy Criterion. \\
+A sequence $(x_n)$ converges if and only if it is Cauchy. \\
+Proof. \\
+Suppose that $(x_n)$ converges. Let $\eps > 0$. Since $(x_n)$ converges, there exists $x \in \reals$ such that $\lim x_n = x$. Then there exists $N \in \naturals$ such that if $n \geq N$,
+$$|x_n - x| < \frac{\eps}{2} \text{.}$$
+Thus if $n,\, m \geq N$,
+\begin{align*}
+|x_n - x_m|\, 	&= |x_n - x + x - x_m| \\
+				&\leq |x_n - x| + |x_m - x| \\
+				&< \frac{\eps}{2} + \frac{\eps}{2} = \eps \text{.}
+\end{align*}
+Now, suppose that $(x_n)$ is Cauchy. Then $(x_n)$ is bounded. By the Bolzano-Weierstrass theorem, $(x_n)$ has a subsequence $(x_{n_k})$ such that
+$$\lim x_{n_k} = x$$
+for some $x \in \reals$. Let $\eps > 0$. Since $(x_n)$ is Cauchy, there exists $N_1 \in \naturals$ such that if $n,\, m \geq N$,
+$$|x_n - x_m| < \frac{\eps}{2} \text{.}$$
+Since $\lim x_{n_k} = x$, there exists $N_2 \in \naturals$ such that if $k \geq N_2$,
+$$|x_{n_k} - x| < \frac{\eps}{2} \text{.}$$
+Let $k = \max \{ N_1, N_2 \}$. Thus if $n \geq N_1$,
+\begin{align*}
+|x_n - x|\,	&= |x_n - x_{n_k} + x_{n_k} - x| \\
+			&\leq |x_n - x_{n_k}| + |x_{n_k} - x| \\
+			&< \frac{\eps}{2} + \frac{\eps}{2} = \eps \text{. \qed}
+\end{align*} \\
+
+Example. \\
+Let $(x_n)$ be a sequence such that $|x_{n + 1} - x_n| < \frac{1}{2^n}$ for all $n \in \naturals$. Then $(x_n)$ converges. \\
+Proof. \\
+Let $\eps > 0$. Choose $N$ such that $1 + log_2 \frac{1}{\eps} < N$. \\
+Thus if $n > m \geq N$, then
+\begin{align*}
+|x_n - x_m|	&= |x_n - x_{n - 1} + x_{n - 1} - \cdots + x_{m + 1} - x_m| \\
+			&< \frac{1}{2^{n - 1}} + \frac{1}{2^{n - 2}} + \cdots + \frac{1}{2^m} \\
+			&< \frac{1}{2^m} + \cdots + \frac{1}{2^{n - 1}} + \frac{1}{2^n} + \cdots \\
+			&= \frac{1}{2^{m - 1}} \text{. \qed}
+\end{align*} \\
+
+Theorem. \\
+A monotone sequence is properly divergent if it is unbounded. In addition, if $(x_n)$ is increasing then $\lim x_n = +\infty$ and if $(x_n)$ is decreasing then $\lim x_n = -\infty$. \\
+Proof. \\
+Suppose that $(x_n)$ is an increasing unbounded sequence. \\
+Let $\alpha > 0$. Since $(x_m)$ is unbounded, there exists $N \in \naturals$ such that
+$$0 < \alpha < x_N \text{.}$$
+Since $(x_n)$ is increasing, if $n \geq N$ then $\alpha < x_N \leq x_n$. \\
+The left is an exercise. \qed \\
+
+Theorem. \\
+Let $(x_n)$ and $(y_n)$ be sequences such that for all $n \in \naturals$,
+$$x_n \leq y_n \text{.}$$
+\begin{enumerate}
+	\item
+	If $\lim x_n = +\infty$ then $\lim y_n = +\infty$.
+	\item
+	If $\lim y_n = -\infty$ then $\lim x_n = -\infty$.
+\end{enumerate}
+Proof. \\
+\begin{enumerate}
+	\item
+	Let $\alpha > 0$. Since $\lim x_n = +\infty$, then there exists $N \in \naturals$ such that if $n \geq N$, then $\alpha < x_n$. But $x_n \leq y_n$ for all $n \in \naturals$, in particular, for $n \geq N$. Hence, $\alpha < y_n$. Therefore, $\lim y_n = +\infty$.
+	\item
+	Exercise. \qed
+\end{enumerate} \br
+
+Remark. \\
+We can further generalize by only assuming that $x_m < y_n$ for all $n \leq K$ for some $K \in \naturals$. \\
+
+Theorem. \\
+Let $(x_n)$ and $(y_n)$ be positive sequences such that $\lim \frac{x_n}{y_n} = L$ for some $L > 0$. Then $\lim x_n = +\infty$ if and only if $\lim y_n = +\infty$. \\
+Proof. \\
+Since $\lim \frac{x_n}{y_n} = L$, there exists $K \in \naturals$ such that if $n \geq K$, then
+\begin{align*}
+					&|\frac{x_n}{y_n} - L| < \frac{L}{2} \\
+\Leftrightarrow\, 	&\frac{L}{2} < \frac{x_n}{y_n} < \frac{3L}{2} \\
+\Leftrightarrow\,	&\frac{L}{2} y_n < x_n < \frac{3L}{2} y_n \text{.}
+\end{align*}
+Let $x_n := \frac{L}{2} y_n$ and $z_n := \frac{3L}{2} y_n$. Note that it can be proven that
+\begin{align*}
+					&\lim y_n = +\infty \\
+\Leftrightarrow\, 	&\lim w_n = +\infty \\
+\Leftrightarrow\,	&\lim z_n = +\infty \text{.}
+\end{align*}
+By our previous theorem (with remark),
+\begin{align*}
+				&\lim w_n = +\infty \\
+\Rightarrow\, 	&\lim x_n = +\infty
+\end{align*}
+and
+\begin{align*}
+				&\lim x_n = +\infty \\
+\Rightarrow\, 	&\lim z_n = +\infty \text{. \qed}
+\end{align*} \\
+
+Remark. \\
+If $(x_n)$ is properly divergent, then for any $\alpha > 0$, there exists $N \in \naturals$ such that if $n \geq N$,
+$$\alpha < |x_n| \text{.}$$ \\
+
+Exercise. \\
+If $(y_n)$ is properly divergent and $(x_n)$ is a bounded sequence, then $\lim \frac{x_n}{y_n} = 0$. \\
 
 \end{document}
